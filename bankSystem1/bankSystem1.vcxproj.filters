@@ -77,5 +77,8 @@
     <ClInclude Include="clsBankUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsListUsersScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
