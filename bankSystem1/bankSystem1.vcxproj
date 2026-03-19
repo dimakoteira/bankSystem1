@@ -136,6 +136,7 @@
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsInputValidate.h" />
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\util.h" />
     <ClInclude Include="clsAddNewClientScreen.h" />
+    <ClInclude Include="clsAddNewUserScreen.h" />
     <ClInclude Include="clsBankClient.h" />
     <ClInclude Include="clsBankUser.h" />
     <ClInclude Include="clsClientListScreen.h" />

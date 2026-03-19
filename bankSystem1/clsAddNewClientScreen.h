@@ -8,7 +8,6 @@ class clsAddNewClientScreen :protected clsScreen{
 private:
    static void ReadClientInfo(clsBankClient& client)
     {
-
         cout << "enter first name: ";
         client.setFirstName(clsInputValidate::ReadString("invalid input try again"));
         cout << "\n enter last name: ";

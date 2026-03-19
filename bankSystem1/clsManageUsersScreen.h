@@ -4,6 +4,7 @@
 #include"clsInputValidate.h";
 #include"clsScreen.h";
 #include"clsListUsersScreen.h";
+#include"clsAddNewUserScreen.h"
 using namespace std;
 class clsManageUsersScreen :protected clsScreen {
 private:
@@ -26,7 +27,7 @@ private:
 	}
 	static void _showAddNewUserScreen()
 	{
-		cout << "coming soon" << endl;
+		clsAddNewUserScreen::addUser();
 	}
 	static void _showDeleteUserScreen()
 	{
@@ -52,7 +53,7 @@ private:
 		{
 		case enManageMenuOptions::ListUsers:
 			_executeManageMenuOption(&_showListUsersScreen);
-			break;
+			return;
 
 		case enManageMenuOptions::AddNewUser:
 			_executeManageMenuOption(&_showAddNewUserScreen);
@@ -74,7 +75,7 @@ private:
 public:
 	static void showManageUsersScreen()
 	{
-		system("cls");
+		/*system("cls");
 		clsScreen::_DrawScreenHeader("Manage Users Screen");
 		cout << "\t\t\t===============================================================" << endl;
 		cout << setw(57) << "Manage Users Menu" << endl;
@@ -88,5 +89,32 @@ public:
 		cout << "\t\t\t[6] Main Menu." << endl;
 		cout << "\t\t\t=================================================================" << endl;
 		_performManageUserOption(enManageMenuOptions(_ReadManageMenuOption()));
+	}*/
+
+		bool BackToMain = false;
+		while (!BackToMain) // الحلقة هي التي تضمن بقاء الشاشة مفتوحة
+		{
+			system("cls");
+			clsScreen::_DrawScreenHeader("Manage Users Screen");
+			cout << "\t\t\t===============================================================" << endl;
+			cout << setw(57) << "Manage Users Menu" << endl;
+			cout << "\t\t\t===============================================================" << endl;
+			// ... طباعة الخيارات ...
+			cout << "\t\t\t[1] List Users." << endl;
+			cout << "\t\t\t[2] Add New User." << endl;
+			cout << "\t\t\t[3] Delete User." << endl;
+			cout << "\t\t\t[4] Update User Info." << endl;
+			cout << "\t\t\t[5] Find User." << endl;
+			cout << "\t\t\t[6] Main Menu." << endl;
+			cout << "\t\t\t===============================================================" << endl;
+
+			short choice = _ReadManageMenuOption();
+			if (choice == 6) {
+				BackToMain = true; // كسر الحلقة للعودة للخلف فعلياً
+			}
+			else {
+				_performManageUserOption((enManageMenuOptions)choice);
+			}
+		}
 	}
 };

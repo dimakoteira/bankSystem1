@@ -30,6 +30,7 @@ private:
         return clsBankUser( " ", " ", " ", " ", " ", " ", 0, enMode::empty);
     }
 
+
     static string _converObjectToLine(clsBankUser user, string space) {
         string s = "";
         s = s +user.getFirstName() + space;
@@ -128,6 +129,8 @@ public:
         _permissions(permissions),
         _mode(mode)
     {}
+   static enum enMainMenuPermmision { eAll = -1, eShowClientList = 1, eAddNewClient = 2, eDeleteClient = 4, eUpdateClient = 8, eFindClient = 16, eTransaction = 32, eManageUsers = 64 };
+
      
     bool IsEmpty()
     {
@@ -256,5 +259,14 @@ public:
     static vector<clsBankUser> getAllUsers()
     {
         return _load();
+    }
+
+     bool checkAccessPerm(enMainMenuPermmision eP)
+    {
+         if (eP == enMainMenuPermmision::eAll)
+             return true;
+         if ((this->_permissions & eP) == eP)
+             return true;
+         else return false;
     }
 };

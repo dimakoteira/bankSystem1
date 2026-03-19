@@ -6,7 +6,8 @@ protected:
 	static void _DrawScreenHeader(string title, string subtitle="")
 	{
 		cout << "\t\t\t--------------------------------------------------------------" << endl;
-		cout << setw(58)<<title<< endl;
+		/*cout << setw(60)<<title<< endl;*/
+		cout << setw(70) << right << "Manage Users Menu" << endl;
 		if (subtitle != "")
 		{
 			cout << setw(58) << subtitle << endl;
