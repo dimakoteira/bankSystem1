@@ -205,6 +205,11 @@ public:
         return (!u.IsEmpty());
     }
 
+    static bool isUserExist(string username,string password)
+    {
+        clsBankUser u = clsBankUser::find(username,password);
+        return (!u.IsEmpty());
+    }
     //save options
     enum enSaveResult { svSucceede = 1, svFailEmptyObj = 2, svFailAccountExist = 3 };
 

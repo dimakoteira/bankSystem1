@@ -52,7 +52,7 @@ private:
 		}
 		void static _showLogOutScreen()
 		{
-			cout << "coming soon.." << endl;
+
 			
 		}
 

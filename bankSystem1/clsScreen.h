@@ -7,7 +7,7 @@ protected:
 	{
 		cout << "\t\t\t--------------------------------------------------------------" << endl;
 		/*cout << setw(60)<<title<< endl;*/
-		cout << setw(70) << right << "Manage Users Menu" << endl;
+		cout << setw(70) << right << title << endl;
 		if (subtitle != "")
 		{
 			cout << setw(58) << subtitle << endl;
