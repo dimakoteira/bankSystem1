@@ -9,7 +9,7 @@ private:
     static void _print(clsBankUser u)
     {
         cout << "----------------------------------------------" << endl;
-        cout << "\t\t Client Card" << endl;
+        cout << "\t\t User Card" << endl;
         cout << "----------------------------------------------" << endl;
         cout << "first name: " << u.getFirstName() << endl;
         cout << "last name: " << u.getLastName() << endl;
