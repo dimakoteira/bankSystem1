@@ -4,7 +4,6 @@
 #include"clsScreen.h";
 #include"clsInputValidate.h"
 class clsFindClientScreen :protected clsScreen {
-	//clsScreen::_DrawScreenHeader("Find Client Screen");
 private:
     static void _print(clsBankClient c)
     {
