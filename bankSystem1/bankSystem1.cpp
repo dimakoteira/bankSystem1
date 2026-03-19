@@ -3,5 +3,7 @@
 int main()
 {
     /*clsMainScreen::ShowMainMenu();*/
-    clsLoginScreen::loginScreen();
+    while (true) {
+        clsLoginScreen::loginScreen();
+    }
 }

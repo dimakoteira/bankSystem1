@@ -266,7 +266,7 @@ public:
         return _load();
     }
 
-     bool checkAccessPerm(enMainMenuPermmision eP)
+    bool checkAccessPerm(enMainMenuPermmision eP)
     {
          if (eP == enMainMenuPermmision::eAll)
              return true;

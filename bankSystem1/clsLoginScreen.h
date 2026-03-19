@@ -35,18 +35,17 @@ private:
 			if (counter == 3) {
 				cout << "the system is locked for 30 seconds";
 				this_thread::sleep_for(chrono::seconds(30));
+				counter = 0;
 				system("cls");
-
 			}
 			username = getUserInfo("Enter Username");
 			password = getUserInfo("Enter Password");
 
 			currentUser = clsBankUser::find(username, password);
 			loginFail = currentUser.IsEmpty();
-		
-
-		} while (loginFail);
-			clsMainScreen::ShowMainMenu();
+		   } 
+		while (loginFail);
+		clsMainScreen::ShowMainMenu();
 
 	}
 public:
@@ -54,8 +53,5 @@ public:
 	{
 		clsScreen::_DrawScreenHeader("Login Screen");
 		_login();
-		
-
-
 	}
 };

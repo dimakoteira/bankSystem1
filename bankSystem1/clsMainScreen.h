@@ -9,8 +9,7 @@
 #include"clsFindClientScreen.h"
 #include"clsTransactionScreen.h";
 #include"clsManageUsersScreen.h";
-
-
+#include"GlobalUser.h"
 using namespace std;
 class clsMainScreen :protected clsScreen{
 private:
@@ -52,8 +51,8 @@ private:
 		}
 		void static _showLogOutScreen()
 		{
-
-			
+			currentUser = clsBankUser::find("", "");
+			//it will go back to main menu
 		}
 
 		void static _goBackToMainMenu()
@@ -67,48 +66,84 @@ private:
 			switch (eOP)
 			{
 			case enMainMenuOptions::ShowClientList:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eShowClientList))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showAllClientScreen();
 				_goBackToMainMenu();
 				break;
 
 			case enMainMenuOptions::AddNewClient:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eAddNewClient))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 					system("cls");
 					_showAddNewClientScreen();
 					_goBackToMainMenu();
 					break;
 
 			case enMainMenuOptions::DeleteClient:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eDeleteClient))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showDeleteClientScreen();
 				_goBackToMainMenu();
 				break;
 
 			case enMainMenuOptions::UpdateClient:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eUpdateClient))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showUpdateClientScreen();
 				_goBackToMainMenu();
 				break;
 
 			case enMainMenuOptions::FindClient:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eFindClient))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showFindClientScreen();
 				_goBackToMainMenu();
 				break;
 
-			/*case enMainMenuOptions::ShowAllBalances:
-				system("cls");
-				_showAllBalancesScreen();
-				_goBackToMainMenu();
-				break;*/
-
 			case enMainMenuOptions::Transaction:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eTransaction))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showTransactionScreen();
 				_goBackToMainMenu();
 				break;
 
 			case enMainMenuOptions::ManageUsers:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eManageUsers))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showManageUsersScreen();
 				_goBackToMainMenu();
@@ -117,7 +152,6 @@ private:
 			case enMainMenuOptions::Logout:
 				system("cls");
 				_showLogOutScreen();
-				_goBackToMainMenu();
 				break;
 			}
 		}

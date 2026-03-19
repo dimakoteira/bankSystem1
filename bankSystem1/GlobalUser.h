@@ -1,5 +1,5 @@
-#pragma 
+#pragma once
 #include<iostream>
 #include"clsBankUser.h"
-
-clsBankUser currentUser = clsBankUser::find("", "");
+using namespace std;
+ clsBankUser currentUser = clsBankUser::find("", "");
