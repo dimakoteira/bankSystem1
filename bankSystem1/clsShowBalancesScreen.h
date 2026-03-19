@@ -16,12 +16,9 @@ public:
 
    static void showAllBalances()
     {
-       clsScreen::_DrawScreenHeader("Show All Balances Screen");
-
         vector<clsBankClient> v = clsBankClient::getAllClients();
-
-        cout << "\t\t\t\t\tBalances List of " << v.size() << " Client(s)" << endl;
-        cout << "------------------------------------------------------------------------------------------------------------------" << endl;
+        string subtitle = "of " + to_string(v.size()) + " clients";
+        clsScreen::_DrawScreenHeader("Show All Balances Screen",subtitle);
         cout << "| Account number" << setw(20) << "| full name" << setw(25) << "| balance |" << endl;
         cout << "------------------------------------------------------------------------------------------------------------------" << endl;
         if (v.size() != 0) {

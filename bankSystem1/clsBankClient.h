@@ -106,7 +106,7 @@ enum enMode{empty=0,update=1,add=2};
        }
    }
 
-   void savneNonDeletedClient(vector<clsBankClient>v)
+   void _saveNonDeletedClient(vector<clsBankClient>v)
    {
        fstream bank_client;
 	   bank_client.open("bankClient2.txt", ios::out);//overwrite
@@ -273,13 +273,12 @@ enum enMode{empty=0,update=1,add=2};
              }
          }
 		 *this = _getEmptyClientObject();
-		 savneNonDeletedClient(vBC);
+		 _saveNonDeletedClient(vBC);
 		 return true;
      }
 
   static vector<clsBankClient> getAllClients()
      {
-		
          return _load();
      }
   static float getTotalSalary()

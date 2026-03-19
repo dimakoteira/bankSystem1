@@ -137,11 +137,13 @@
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\util.h" />
     <ClInclude Include="clsAddNewClientScreen.h" />
     <ClInclude Include="clsBankClient.h" />
+    <ClInclude Include="clsBankUser.h" />
     <ClInclude Include="clsClientListScreen.h" />
     <ClInclude Include="clsDeleteClientScreen.h" />
     <ClInclude Include="clsDepositScreen.h" />
     <ClInclude Include="clsFindClientScreen.h" />
     <ClInclude Include="clsMainScreen.h" />
+    <ClInclude Include="clsManageUsersScreen.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsShowBalancesScreen.h" />

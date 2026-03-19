@@ -8,6 +8,7 @@
 #include"clsUpdateClientScreen.h";
 #include"clsFindClientScreen.h"
 #include"clsTransactionScreen.h";
+#include"clsManageUsersScreen.h";
 
 
 using namespace std;
@@ -41,17 +42,13 @@ private:
 		{
 			clsFindClientScreen::FindClient();
 		}
-		/*void static _showAllBalancesScreen()
-		{
-			clsShowBalancesScreen::showAllBalances();
-		}*/
 		void static _showTransactionScreen()
 		{
 			clsTransactionScreen::showTransactionMenu();
 		}
 		void static _showManageUsersScreen()
 		{
-			cout << "coming soon.." << endl;
+			clsManageUsersScreen::showManageUsersScreen();
 		}
 		void static _showLogOutScreen()
 		{
