@@ -155,7 +155,7 @@ enum enMode{empty=0,update=1,add=2};
            _salary = value;
        }
 
-     /*  void print() a ui function
+     /*  void print() don't include a ui function
        {
            cout << "----------------------------------------------" << endl;
            cout << "\t\t Client Card" << endl;
