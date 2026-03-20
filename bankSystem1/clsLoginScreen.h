@@ -17,27 +17,36 @@ private:
 		cout << message << endl;
 		cin >> s;
 		return s;
-
 	}
 
-	static void _login()
+	static bool _login()
 	{
 		bool loginFail = false;
 		string username;
 		string password;
-		int counter = 0;
+		/*int counter = 0;*/
+		short trials = 0;
 		do {
 			if (loginFail)
 			{
-				counter++;
+				//counter++;
+				trials++;
 				cout << "invalid username/password" << endl;
+				cout << "you have " << 3-trials << " trial(s) left" << endl;
 			}
-			if (counter == 3) {
-				cout << "the system is locked for 30 seconds";
-				this_thread::sleep_for(chrono::seconds(30));
-				counter = 0;
-				system("cls");
+			//locl system
+			if (trials == 3)
+			{
+				cout << "system is locked" << endl;
+				return false;
 			}
+
+			//if (counter == 3) {
+			//	cout << "the system is locked for 30 seconds";
+			//	//this_thread::sleep_for(chrono::seconds(30));//sleep for 30 seconds
+			//	counter = 0;
+			//	system("cls");
+			//}
 			username = getUserInfo("Enter Username");
 			password = getUserInfo("Enter Password");
 
@@ -46,12 +55,13 @@ private:
 		   } 
 		while (loginFail);
 		clsMainScreen::ShowMainMenu();
+		return true;
 
 	}
 public:
-	static void loginScreen()
+	static bool loginScreen()
 	{
 		clsScreen::_DrawScreenHeader("Login Screen");
-		_login();
+		return _login();
 	}
 };
