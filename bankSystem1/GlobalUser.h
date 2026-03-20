@@ -3,3 +3,6 @@
 #include"clsBankUser.h"
 using namespace std;
  clsBankUser currentUser = clsBankUser::find("", "");
+ class clsRegisterLog {
+
+ };

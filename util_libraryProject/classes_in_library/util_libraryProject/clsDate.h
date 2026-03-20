@@ -106,6 +106,25 @@ public:
         this->day = order;
     }
 
+  
+        static string GetCurrentTime() {
+            // 1. الحصول على الوقت الحالي من النظام
+            auto now = chrono::system_clock::now();
+
+            // 2. تحويله إلى نوع time_t لسهولة التعامل معه
+            time_t currentTime = chrono::system_clock::to_time_t(now);
+
+            // 3. تحويله إلى هيكل الوقت المحلي (Local Time)
+            struct tm timeInfo;
+            localtime_s(&timeInfo, &currentTime); // استخدام النسخة الآمنة في Visual Studio
+
+            // 4. تنسيق الوقت ليظهر بالشكل: HH:MM:SS
+            char buffer[80];
+            strftime(buffer, sizeof(buffer), "%H:%M:%S", &timeInfo);
+
+            return string(buffer);
+        }
+    
     //is leap year function
     bool is_leap()
     {
