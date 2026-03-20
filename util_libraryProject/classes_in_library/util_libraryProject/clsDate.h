@@ -107,23 +107,24 @@ public:
     }
 
   
-        static string GetCurrentTime() {
-            // 1. الحصول على الوقت الحالي من النظام
-            auto now = chrono::system_clock::now();
+        static string GetSystemDateTimeString() {
+       
+            time_t t = time(0);
+            tm now;
+            localtime_s(&now, &t);
+           // tm* now = localtime(&t);
 
-            // 2. تحويله إلى نوع time_t لسهولة التعامل معه
-            time_t currentTime = chrono::system_clock::to_time_t(now);
+            short day, month, year, hour, minutes, seconds;
+            year = now.tm_year + 1900;
+            month = now.tm_mon + 1;
+            day = now.tm_mday;
+            hour = now . tm_hour;
+            minutes=now.tm_min;
+            seconds = now.tm_sec;
 
-            // 3. تحويله إلى هيكل الوقت المحلي (Local Time)
-            struct tm timeInfo;
-            localtime_s(&timeInfo, &currentTime); // استخدام النسخة الآمنة في Visual Studio
-
-            // 4. تنسيق الوقت ليظهر بالشكل: HH:MM:SS
-            char buffer[80];
-            strftime(buffer, sizeof(buffer), "%H:%M:%S", &timeInfo);
-
-            return string(buffer);
-        }
+            return to_string(day) + "/" + to_string(month) + "/" + to_string(year)
+              + "-" + to_string(hour) + ":" + to_string(minutes) + ":" + to_string(seconds);
+                   }
     
     //is leap year function
     bool is_leap()

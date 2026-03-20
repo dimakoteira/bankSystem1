@@ -41,8 +41,10 @@ private:
 
 			currentUser = clsBankUser::find(username, password);
 			loginFail = currentUser.IsEmpty();
+
 		   } 
 		while (loginFail);
+		currentUser.RegisterLogin();
 		clsMainScreen::ShowMainMenu();
 		return true;
 

@@ -5,6 +5,8 @@
 #include"clsPerson.h"
 #include"clsString.h";
 #include<string>
+//#include"GlobalUser.h"
+#include"clsDate.h"
 using namespace std;
 
 class clsBankUser : public clsPerson {
@@ -41,6 +43,12 @@ private:
         s += user.getPassword() + space;
         s += to_string(user.getPermissions());
         return s;
+    }
+    string _prepareLoginRecord()
+    {
+        string date = clsDate::GetSystemDateTimeString();
+        
+        return (date + "#//#" + this->_password + "#//#" + this->_userName + "#//#" + to_string(this->_permissions));
     }
 
     static vector<clsBankUser> _load()
@@ -274,4 +282,16 @@ public:
              return true;
          else return false;
     }
+    void RegisterLogin()
+    {
+        string data = _prepareLoginRecord();
+        fstream File;
+        File.open("loginFile.txt", ios::out | ios::app);
+        if (File.is_open())
+        {
+            File << data << endl;
+            File.close();
+        }
+    }
+
 };
