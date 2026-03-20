@@ -5,7 +5,6 @@
 #include"clsPerson.h"
 #include"clsString.h";
 #include<string>
-//#include"GlobalUser.h"
 #include"clsDate.h"
 using namespace std;
 
