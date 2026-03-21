@@ -160,6 +160,12 @@ private:
 				break;
 
 			case enMainMenuOptions::RegisterLogin:
+				if (!currentUser.checkAccessPerm(clsBankUser::enMainMenuPermmision::eRegisterLogin))
+				{
+					cout << "access denied to this user" << endl;
+					_goBackToMainMenu();
+					break;
+				}
 				system("cls");
 				_showRegisterLoginScreen();
 				_goBackToMainMenu();

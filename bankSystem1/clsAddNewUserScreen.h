@@ -24,18 +24,20 @@ private:
             return - 1;
         if (_getAnswer("so do you want to give access to:\n //show client list//: "))
             perm += clsBankUser::enMainMenuPermmision::eShowClientList;
-        if (_getAnswer("permission to //add new client//: "))
+        if (_getAnswer(" \n //add new client//: "))
            perm += clsBankUser::enMainMenuPermmision::eAddNewClient;
-        if (_getAnswer("permission to //delete client//: "))
+        if (_getAnswer("\n //delete client//: "))
             perm += clsBankUser::enMainMenuPermmision::eDeleteClient;
-        if (_getAnswer("permission to //update client//: "))
+        if (_getAnswer("\n //update client//: "))
             perm += clsBankUser::enMainMenuPermmision::eUpdateClient;
-        if (_getAnswer("permission to //find client//: "))
+        if (_getAnswer("\n //find client//: "))
             perm += clsBankUser::enMainMenuPermmision::eFindClient;
-        if (_getAnswer("permission to //transaction client//: "))
+        if (_getAnswer("\n //transaction//: "))
             perm += clsBankUser::enMainMenuPermmision::eTransaction;
-        if (_getAnswer("permission to //manage users//: "))
+        if (_getAnswer("\n //manage users//: "))
             perm += clsBankUser::enMainMenuPermmision::eManageUsers;
+        if (_getAnswer("\n //register logins screen//: "))
+            perm += clsBankUser::enMainMenuPermmision::eRegisterLogin;
         return perm;
     }
     static void ReadUserInfo(clsBankUser& user)
