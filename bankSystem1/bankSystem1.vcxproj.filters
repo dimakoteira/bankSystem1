@@ -98,5 +98,8 @@
     <ClInclude Include="GlobalUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsRegisterLoginScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

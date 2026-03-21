@@ -2,6 +2,7 @@
 #include<iostream>
 #include"clsBankClient.h";
 #include<iomanip>
+#include"clsScreen.h"
 using namespace std;
 class clsClientListScreen :protected clsScreen {
 private:

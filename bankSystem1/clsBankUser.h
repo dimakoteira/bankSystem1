@@ -16,7 +16,7 @@ private:
     string _password;
     int _permissions;
     bool _markForDelete = false;
-
+   
     //methods
     static clsBankUser _convertLineToObject(string line, string seperator)
     {
@@ -24,6 +24,19 @@ private:
         if (v.size() != 7)
             return _getEmptyUserObject();
         return clsBankUser( v[0], v[1], v[2], v[3], v[4], v[5], stoi(v[6]), enMode::update);
+    }
+    struct stLoginRegister;
+
+    static stLoginRegister _convertLoginLineToObject(string line, string seperator="#//#")
+    {
+        vector<string> v = clsString::split_stringInVector(line, seperator);
+        stLoginRegister record;
+        record.date = v[0];
+        record.password = v[1];
+        record.username = v[2];
+        record.perm = stoi(v[3]);
+        return record;
+       
     }
 
     static clsBankUser _getEmptyUserObject()
@@ -48,6 +61,26 @@ private:
         string date = clsDate::GetSystemDateTimeString();
         
         return (date + "#//#" + this->_password + "#//#" + this->_userName + "#//#" + to_string(this->_permissions));
+    }
+
+    static vector<stLoginRegister> _loadLogins()
+    {
+
+        fstream user_login;
+        vector<stLoginRegister> vfile;
+        user_login.open("LoginFile.txt", ios::in);
+        if (user_login.is_open())
+        {
+            string line;
+            stLoginRegister log;
+            while (getline(user_login, line))
+            {
+              log = _convertLoginLineToObject(line);
+                vfile.push_back(log);
+            }
+            user_login.close();
+        }
+        return vfile;
     }
 
     static vector<clsBankUser> _load()
@@ -128,6 +161,13 @@ private:
 
 
 public:
+    struct stLoginRegister {
+        string date;
+        string password;
+        string username;
+        int perm;
+    };
+
     // Constructor
     clsBankUser(const string& firstName,const string& lastName,const string& email,const string& phone,const string& userName,const string& password,int permissions,enMode mode) 
        : clsPerson(firstName, lastName, email, phone),
@@ -271,6 +311,11 @@ public:
     static vector<clsBankUser> getAllUsers()
     {
         return _load();
+    }
+
+    static vector<stLoginRegister>getAllLogins()
+    {
+        return _loadLogins();
     }
 
     bool checkAccessPerm(enMainMenuPermmision eP)

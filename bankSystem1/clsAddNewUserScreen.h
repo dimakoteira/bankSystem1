@@ -20,9 +20,9 @@ private:
     {
         int perm = 0;
         char answer;
-        if(_getAnswer("do you want to giv full access? y/n"))
+        if(_getAnswer("do you want to giv full access? y/n: "))
             return - 1;
-        if (_getAnswer("so do you want to give access to:\npermession to //show client list//: "))
+        if (_getAnswer("so do you want to give access to:\n //show client list//: "))
             perm += clsBankUser::enMainMenuPermmision::eShowClientList;
         if (_getAnswer("permission to //add new client//: "))
            perm += clsBankUser::enMainMenuPermmision::eAddNewClient;
