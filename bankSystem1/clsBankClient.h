@@ -308,4 +308,12 @@ enum enMode{empty=0,update=1,add=2};
       saveClient();
       return true;
   }
+  bool transfer(int amount,clsBankClient &toClient)
+  {
+      if (amount > this->_salary)
+          return false;
+      withdraw(amount);
+      toClient.deposit(amount);
+      return true;
+  }
 };
