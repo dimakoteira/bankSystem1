@@ -53,7 +53,7 @@ public:
 
 		cout << "enter the amount you want to transfer: " ;
 		int amount = clsInputValidate::ReadIntNumber("invalid input");
-		cout << "are you sure you want to Withdraw this amount? ";
+		cout << "are you sure you want to transfer this amount? ";
 		char answer;
 		cin >> answer;
 		if (answer == 'y' || answer == 'Y')
@@ -61,7 +61,7 @@ public:
 			if (client1.transfer(amount,client2))
 			{
 
-				cout << "amount withdrawed succesfully" << endl;
+				cout << "amount transfered succesfully" << endl;
 				_print(client1); _print(client2);
 			}
 			else cout << "you don't have enough money in the account" << endl;

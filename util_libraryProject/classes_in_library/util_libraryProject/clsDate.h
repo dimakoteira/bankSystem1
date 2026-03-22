@@ -123,7 +123,7 @@ public:
             seconds = now.tm_sec;
 
             return to_string(day) + "/" + to_string(month) + "/" + to_string(year)
-              + "-" + to_string(hour) + ":" + to_string(minutes) + ":" + to_string(seconds);
+              + " - " + to_string(hour) + ":" + to_string(minutes) + ":" + to_string(seconds);
                    }
     
     //is leap year function

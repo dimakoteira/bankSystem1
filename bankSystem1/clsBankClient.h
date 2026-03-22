@@ -5,6 +5,7 @@
 #include<fstream>
 #include"clsString.h";
 #include<string>
+#include"clsDate.h"
 
 using namespace std;
 class clsBankClient : public clsPerson
@@ -17,6 +18,7 @@ float _salary;
 bool _markDelete = false;
 enum enMode{empty=0,update=1,add=2};
    enMode _mode=enMode::empty;
+   struct sTransferLog;
 
    //methods
   static clsBankClient _convertLineToObject(string line, string seperator)
@@ -120,7 +122,67 @@ enum enMode{empty=0,update=1,add=2};
        }
 	   bank_client.close();
    }
+   string _prepareTransferLogRecord(clsBankClient dest,int amount)
+   {
+       string dateTime = clsDate::GetSystemDateTimeString();
+       return dateTime + "#//#" + this->_accountNum + "#//#" + dest._accountNum + "#//#" + to_string(amount)+"#//#" + to_string(this->_salary) + "#//#" +
+           to_string(dest._salary) + "#//#" + currentUser.getUserName();
+   }
+
+   void _TransferLog(clsBankClient destClient, int amount)
+   {
+       string data = _prepareTransferLogRecord(destClient, amount);
+       fstream File;
+       File.open("transferLog.txt", ios::out | ios::app);
+       if (File.is_open())
+       {
+           File << data << endl;
+           File.close();
+       }
+   }
+   static sTransferLog _convertTransferLineToObject(const string& line)
+   {
+       vector<string> v = clsString::split_stringInVector(line, "#//#");
+       sTransferLog log;
+       if (v.size() == 7) {
+           log.dateTime = v[0];
+           log.sAccount = v[1];
+           log.dAccount = v[2];
+           log.amount = stoi(v[3]);
+           log.sBalance = stoi(v[4]);
+           log.dBalance = stoi(v[5]);
+           log.username = v[6];
+       }
+       return log;
+   }
+
+   static vector<sTransferLog> _loadTransferLog()
+   {
+       fstream logFile;
+       vector<sTransferLog> vfile;
+       logFile.open("transferLog.txt", ios::in);
+       if (logFile.is_open())
+       {
+           string line;
+           while (getline(logFile, line))
+           {
+               sTransferLog log = _convertTransferLineToObject(line);
+               vfile.push_back(log);
+           }
+           logFile.close();
+       }
+       return vfile;
+   }
    public:
+       struct sTransferLog {
+           string dateTime;
+           string sAccount;
+           string dAccount;
+           int amount;
+           int sBalance;
+           int dBalance;
+           string username;
+       };
 
        clsBankClient(enMode mode,string firstName, string lastName, string email, string phone, string accountNum, string pinCode, float salary)
           :clsPerson(firstName, lastName, email, phone)
@@ -227,7 +289,6 @@ enum enMode{empty=0,update=1,add=2};
 
      enum enSaveResult { svSucceede=1,svFailEmptyObj=2,svFailAccountExist=3};
 
-
      enSaveResult saveClient()
      {
          switch (_mode)
@@ -281,6 +342,10 @@ enum enMode{empty=0,update=1,add=2};
      {
          return _load();
      }
+  static vector<sTransferLog> getAllLogs()
+  {
+      return _loadTransferLog();
+  }
   static float getTotalSalary()
   {
 	  vector<clsBankClient> v = _load();
@@ -314,6 +379,9 @@ enum enMode{empty=0,update=1,add=2};
           return false;
       withdraw(amount);
       toClient.deposit(amount);
+      _TransferLog(toClient, amount);
       return true;
   }
+  
+
 };
