@@ -301,7 +301,7 @@ public:
 	}
 
 
-	int counter_each_word()
+	int count_each_word()
 	{
 		return count_each_word(_value);
 	}
