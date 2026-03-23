@@ -52,7 +52,7 @@ enum enMode{empty=0,update=1,add=2};
 
       fstream clients_bank;
       vector<clsBankClient> vfile;
-      clients_bank.open("bankClient2.txt", ios::in);
+      clients_bank.open("data/bankClient2.txt", ios::in);
       if (clients_bank.is_open())
       {
           string line;
@@ -69,7 +69,7 @@ enum enMode{empty=0,update=1,add=2};
   void _saveClientsData(vector<clsBankClient> v)
   {
      fstream bank_client;
-         bank_client.open("bankClient2.txt", ios::out);//overwrite
+         bank_client.open("data/bankClient2.txt", ios::out);//overwrite
          if (bank_client.is_open())
          {
              for (clsBankClient& c : v)
@@ -98,7 +98,7 @@ enum enMode{empty=0,update=1,add=2};
    void _addClient()
    {
        fstream bank_client;
-       bank_client.open("bankClient2.txt", ios::app);//overwrite
+       bank_client.open("data/bankClient2.txt", ios::app);//overwrite
        if (bank_client.is_open())
        {
           string line = _converObjectToLine(*this, "#//#");
@@ -111,7 +111,7 @@ enum enMode{empty=0,update=1,add=2};
    void _saveNonDeletedClient(vector<clsBankClient>v)
    {
        fstream bank_client;
-	   bank_client.open("bankClient2.txt", ios::out);//overwrite
+	   bank_client.open("data/bankClient2.txt", ios::out);//overwrite
        for (clsBankClient& c : v)
        {
            if (c._markDelete == false)
@@ -133,7 +133,7 @@ enum enMode{empty=0,update=1,add=2};
    {
        string data = _prepareTransferLogRecord(destClient, amount);
        fstream File;
-       File.open("transferLog.txt", ios::out | ios::app);
+       File.open("data/transferLog.txt", ios::out | ios::app);
        if (File.is_open())
        {
            File << data << endl;
@@ -160,7 +160,7 @@ enum enMode{empty=0,update=1,add=2};
    {
        fstream logFile;
        vector<sTransferLog> vfile;
-       logFile.open("transferLog.txt", ios::in);
+       logFile.open("data/transferLog.txt", ios::in);
        if (logFile.is_open())
        {
            string line;
@@ -236,7 +236,7 @@ enum enMode{empty=0,update=1,add=2};
        {
            vector <clsBankClient> vBC;
            fstream bank_client;
-           bank_client.open("bankClient2.txt", ios::in);
+           bank_client.open("data/bankClient2.txt", ios::in);
            if (bank_client.is_open())
              {
                string line;
@@ -261,7 +261,7 @@ enum enMode{empty=0,update=1,add=2};
      {
          vector <clsBankClient> vBC;
          fstream bank_client;
-         bank_client.open("bankClient2.txt", ios::in);
+         bank_client.open("data/bankClient2.txt", ios::in);
          if (bank_client.is_open())
          {
              string line;

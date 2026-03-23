@@ -70,7 +70,7 @@ private:
 
         fstream user_login;
         vector<stLoginRegister> vfile;
-        user_login.open("LoginFile.txt", ios::in);
+        user_login.open("data/LoginFile.txt", ios::in);
         if (user_login.is_open())
         {
             string line;
@@ -90,7 +90,7 @@ private:
 
         fstream user_bank;
         vector<clsBankUser> vfile;
-        user_bank.open("BankUsers.txt", ios::in);
+        user_bank.open("data/BankUsers.txt", ios::in);
         if (user_bank.is_open())
         {
             string line;
@@ -107,7 +107,7 @@ private:
     void _saveUserData(vector<clsBankUser> v)
     {
         fstream bank_user;
-        bank_user.open("BankUsers.txt", ios::out);//overwrite
+        bank_user.open("data/BankUsers.txt", ios::out);//overwrite
         if (bank_user.is_open())
         {
             for (clsBankUser& u : v)
@@ -136,7 +136,7 @@ private:
     void _addUser()
     {
         fstream bank_user;
-        bank_user.open("BankUsers.txt", ios::app);
+        bank_user.open("data/BankUsers.txt", ios::app);
         if (bank_user.is_open())
         {
             string line = _converObjectToLine(*this, "#//#");
@@ -149,7 +149,7 @@ private:
     void _saveNonDeletedUser(vector<clsBankUser>v)
     {
         fstream bank_user;
-        bank_user.open("BankUsers.txt", ios::out);//overwrite
+        bank_user.open("data/BankUsers.txt", ios::out);//overwrite
         for (clsBankUser& u : v)
         {
             if (u._markForDelete == false)
@@ -204,7 +204,7 @@ public:
     {
         vector <clsBankUser> vBU;
         fstream bank_user;
-        bank_user.open("bankUsers.txt", ios::in);
+        bank_user.open("data/BankUsers.txt", ios::in);
         if (bank_user.is_open())
         {
             string line;
@@ -228,7 +228,7 @@ public:
     {
         vector <clsBankUser> vBU;
         fstream bank_user;
-        bank_user.open("bankUsers.txt", ios::in);
+        bank_user.open("data/BankUsers.txt", ios::in);
         if (bank_user.is_open())
         {
             string line;
@@ -332,7 +332,7 @@ public:
     {
         string data = _prepareLoginRecord();
         fstream File;
-        File.open("loginFile.txt", ios::out | ios::app);
+        File.open("data/loginFile.txt", ios::out | ios::app);
         if (File.is_open())
         {
             File << data << endl;
