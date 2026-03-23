@@ -55,6 +55,6 @@ This project integrates several custom-built utility classes that I developed to
 
 | Manage Users | Login Register |
 | :---: | :---: |
-| ![Users](<img width="1339" height="704" alt="Screenshot 2026-03-23 145227" src="https://github.com/user-attachments/assets/280f5258-e1b2-46fb-ae92-286ae2a33450" />
+| ![Users] <img width="1208" height="519" alt="Screenshot 2026-03-23 145211" src="https://github.com/user-attachments/assets/b3795356-2f76-429f-a89f-c04ad2384995" />
  | ![Login](<img width="1339" height="704" alt="Screenshot 2026-03-23 145227" src="https://github.com/user-attachments/assets/35afff6d-0133-4f7c-9f32-2f791a92f8be" />
 |
