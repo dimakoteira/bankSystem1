@@ -148,7 +148,7 @@ public:
 		return tabs;
 	 }
 
-	static string encrypt(string name, int encKey)
+	static string encrypt(string name, int encKey=2)
 	{
 		for (int i = 0;i < name.length();i++)
 		{
@@ -157,7 +157,7 @@ public:
 		return name;
 	}
 
-	static string decrypt(string name, int encKey)
+	static string decrypt(string name, int encKey=2)
 	{
 		for (int i = 0;i < name.length();i++)
 		{

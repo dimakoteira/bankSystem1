@@ -6,6 +6,7 @@
 #include"clsString.h";
 #include<string>
 #include"clsDate.h"
+#include"Util.h"
 using namespace std;
 
 class clsBankUser : public clsPerson {
@@ -23,7 +24,7 @@ private:
         vector<string> v = clsString::split_stringInVector(line, seperator);
         if (v.size() != 7)
             return _getEmptyUserObject();
-        return clsBankUser( v[0], v[1], v[2], v[3], v[4], v[5], stoi(v[6]), enMode::update);
+        return clsBankUser( v[0], v[1], v[2], v[3], v[4], clsUtil::decrypt(v[5]), stoi(v[6]), enMode::update);
     }
     struct stLoginRegister;
 
@@ -32,7 +33,7 @@ private:
         vector<string> v = clsString::split_stringInVector(line, seperator);
         stLoginRegister record;
         record.date = v[0];
-        record.password = v[1];
+        record.password =clsUtil::decrypt(v[1]);
         record.username = v[2];
         record.perm = stoi(v[3]);
         return record;
@@ -52,7 +53,8 @@ private:
         s += user.getEmail() + space;
         s += user.getPhone() + space;
         s += user.getUserName() + space;
-        s += user.getPassword() + space;
+        //here we encrypt the password save to the file
+        s += clsUtil::encrypt(user.getPassword()) + space;
         s += to_string(user.getPermissions());
         return s;
     }
@@ -60,7 +62,7 @@ private:
     {
         string date = clsDate::GetSystemDateTimeString();
         
-        return (date + "#//#" + this->_password + "#//#" + this->_userName + "#//#" + to_string(this->_permissions));
+        return (date + "#//#" + clsUtil::encrypt(this->_password) + "#//#" + this->_userName + "#//#" + to_string(this->_permissions));
     }
 
     static vector<stLoginRegister> _loadLogins()
