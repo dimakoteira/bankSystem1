@@ -338,7 +338,7 @@ public:
             File << data << endl;
             File.close();
         }
-        clsDate::
+        
     }
 
 };
