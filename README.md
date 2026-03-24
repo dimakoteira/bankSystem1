@@ -33,6 +33,11 @@ This project integrates several custom-built utility classes that I developed to
 * **Login Register:** Comprehensive tracking of all login attempts for security auditing.
 
 ---
+###  💱 Currency Exchange System (New!)
+A comprehensive global currency management module that includes:
+* **Live Database:** Access to a worldwide list of countries, currency codes, and exchange rates.
+* **Update Rates:** Ability to modify exchange rates dynamically.
+* **Currency Calculator:** Built-in tool to convert amounts between any two global currencies based on their USD rate.
 
 ## 📁 Folder Structure
 * `/src`: Core system logic.
@@ -47,14 +52,22 @@ This project integrates several custom-built utility classes that I developed to
 4. Run `bankSystem.cpp`.
 ## 📸 Screenshots
 
-| Main Menu | Transactions | Transfer Log |
+| 🏠 Main Menu | 💱 Currency Exchange | 📊 Transactions |
 | :---: | :---: | :---: |
-| ![Main](https://github.com/user-attachments/assets/f9be0489-f690-4323-a5dd-2297fecd7302) | ![Trans](<img width="1148" height="523" alt="Screenshot 2026-03-23 145112" src="https://github.com/user-attachments/assets/dff32958-f69d-4f3d-8d74-f01f8643a833" />
- | ![Log](<img width="1454" height="478" alt="Screenshot 2026-03-23 150452" src="https://github.com/user-attachments/assets/0d8efdf1-859f-4ca5-8adf-4d8738a91309" />
- |
+| ![Main](<img width="1525" height="591" alt="image" src="https://github.com/user-attachments/assets/990cd5ff-cfbe-469e-9814-54927ea16254" />
+) | ![Currency](<img width="1589" height="420" alt="image" src="https://github.com/user-attachments/assets/847e5b90-dbc7-4868-b810-477fe683a5bc" /> 
+) | ![Trans](<img width="1471" height="591" alt="image" src="https://github.com/user-attachments/assets/eab2a701-1653-4e93-9ff0-54d820651515" />
+) |
+| *The heart of the system* | *Global rate management* | *Financial operations* |
 
-| Manage Users | Login Register |
-| :---: | :---: |
-| ![Users] <img width="1208" height="519" alt="Screenshot 2026-03-23 145211" src="https://github.com/user-attachments/assets/b3795356-2f76-429f-a89f-c04ad2384995" />
- | ![Login](<img width="1339" height="704" alt="Screenshot 2026-03-23 145227" src="https://github.com/user-attachments/assets/35afff6d-0133-4f7c-9f32-2f791a92f8be" />
-|
+| 📝 Transfer Log | 👥 Manage Users | 🔐 Login Register |
+| :---: | :---: | :---: |
+| ![Log](<img width="1613" height="573" alt="image" src="https://github.com/user-attachments/assets/3058d2ef-c2c5-4402-91f2-eaecb871ae4f" />
+) | ![Users](<img width="1316" height="551" alt="image" src="https://github.com/user-attachments/assets/6635cc02-5752-47f6-b8d3-53f5a29557f8" />
+) | ![Login](<img width="1526" height="961" alt="image" src="https://github.com/user-attachments/assets/738db18b-3de4-4df8-ac65-1ce385dcfe88" />
+) |
+| *Transaction history* | *Staff & Permission control* | *Security & Audit trails* |
+
+
+
+
