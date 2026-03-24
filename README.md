@@ -54,10 +54,10 @@ A comprehensive global currency management module that includes:
 
 | 🏠 Main Menu | 💱 Currency Exchange | 📊 Transactions |
 | :---: | :---: | :---: |
-| ![Main]( <img width="1277" height="554" alt="Screenshot 2026-03-24 222508" src="https://github.com/user-attachments/assets/9decf179-1a9b-469c-9915-960ee79007a6" />)
-| ![Currency](<img width="1396" height="485" alt="image" src="https://github.com/user-attachments/assets/42c7e6f1-ef9b-4808-a5af-0d84c9381f05" />) 
-| ![Trans](<img width="1455" height="433" alt="image" src="https://github.com/user-attachments/assets/58f6b7ff-33ea-4367-a0c6-55cde7c3b167" />) 
-|
+| ![Main](<img width="1525" height="591" alt="image" src="https://github.com/user-attachments/assets/990cd5ff-cfbe-469e-9814-54927ea16254" />
+) | ![Currency](<img width="1589" height="420" alt="image" src="https://github.com/user-attachments/assets/847e5b90-dbc7-4868-b810-477fe683a5bc" /> 
+) | ![Trans](<img width="1471" height="591" alt="image" src="https://github.com/user-attachments/assets/eab2a701-1653-4e93-9ff0-54d820651515" />
+) |
 | *The heart of the system* | *Global rate management* | *Financial operations* |
 
 | 📝 Transfer Log | 👥 Manage Users | 🔐 Login Register |
@@ -70,4 +70,4 @@ A comprehensive global currency management module that includes:
 
 
 
-|
+
