@@ -35,8 +35,6 @@ private:
             perm += clsBankUser::enMainMenuPermmision::eTransaction;
         if (_getAnswer("permission to //manage users//: "))
             perm += clsBankUser::enMainMenuPermmision::eManageUsers;
-        if (_getAnswer("permission to //currrency exchange//: "))
-            perm += clsBankUser::enMainMenuPermmision::eCurrencyExchange;
         return perm;
     }
     static void _ReadUserInfo(clsBankUser& user)

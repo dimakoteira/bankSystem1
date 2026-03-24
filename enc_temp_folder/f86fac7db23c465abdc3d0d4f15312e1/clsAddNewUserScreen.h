@@ -36,8 +36,6 @@ private:
             perm += clsBankUser::enMainMenuPermmision::eTransaction;
         if (_getAnswer("\n //manage users//: "))
             perm += clsBankUser::enMainMenuPermmision::eManageUsers;
-        if (_getAnswer("\n //currency exchange//: "))
-            perm += clsBankUser::enMainMenuPermmision::eCurrencyExchange;
         if (_getAnswer("\n //register logins screen//: "))
             perm += clsBankUser::enMainMenuPermmision::eRegisterLogin;
         return perm;
