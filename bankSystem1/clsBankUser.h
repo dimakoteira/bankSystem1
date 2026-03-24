@@ -178,7 +178,7 @@ public:
         _permissions(permissions),
         _mode(mode)
     {}
-   static enum enMainMenuPermmision { eAll = -1, eShowClientList = 1, eAddNewClient = 2, eDeleteClient = 4, eUpdateClient = 8, eFindClient = 16, eTransaction = 32, eManageUsers = 64, eRegisterLogin=128 };
+   static enum enMainMenuPermmision { eAll = -1, eShowClientList = 1, eAddNewClient = 2, eDeleteClient = 4, eUpdateClient = 8, eFindClient = 16, eTransaction = 32, eManageUsers = 64,eCurrencyExchange=128, eRegisterLogin= 256};
 
      
     bool IsEmpty()

@@ -85,16 +85,10 @@ public:
         cout << "are you sure you want to update this user y/n: ";
         cin >> a;
         if (a == 'y' || a == 'Y') {
-          /*  system("cls");
-            cout << "------------------------------" << endl;
-            cout << "\t Update User" << endl;
-            cout << "------------------------------" << endl;*/
             _ReadUserInfo(user);
-
             clsBankUser::enSaveResult res = user.saveUser();
             switch (res)
             {
-              /*  system("cls");*/
             case clsBankUser::enSaveResult::svSucceede:
                 cout << "uaer was updated successfuly" << endl;
                 _print(user);break;
