@@ -128,44 +128,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bankSystem1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\string_library_project\string_library_project\clsString.h" />
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsDate.h" />
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsInputValidate.h" />
     <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\util.h" />
-    <ClInclude Include="clsAddNewClientScreen.h" />
-    <ClInclude Include="clsAddNewUserScreen.h" />
-    <ClInclude Include="clsBankClient.h" />
-    <ClInclude Include="clsBankUser.h" />
-    <ClInclude Include="clsClientListScreen.h" />
-    <ClInclude Include="clsCurrency.h" />
-    <ClInclude Include="clsCurrencyCalculator.h" />
-    <ClInclude Include="clsCurrencyListScreen.h" />
-    <ClInclude Include="clsCurrencyMainScreen.h" />
-    <ClInclude Include="clsDeleteClientScreen.h" />
-    <ClInclude Include="clsDepositScreen.h" />
-    <ClInclude Include="clsFindClientScreen.h" />
-    <ClInclude Include="clsFindCurrencyScreen.h" />
-    <ClInclude Include="clsFindUserScreen.h" />
-    <ClInclude Include="clsListUsersScreen.h" />
-    <ClInclude Include="clsLoginScreen.h" />
-    <ClInclude Include="clsMainScreen.h" />
-    <ClInclude Include="clsManageUsersScreen.h" />
-    <ClInclude Include="clsPerson.h" />
-    <ClInclude Include="clsRegisterLoginScreen.h" />
-    <ClInclude Include="clsScreen.h" />
-    <ClInclude Include="clsShowBalancesScreen.h" />
-    <ClInclude Include="clsDeleteUserScreen.h" />
-    <ClInclude Include="clsTransactionScreen.h" />
-    <ClInclude Include="clsTransferLogScreen.h" />
-    <ClInclude Include="clsTransferScreen.h" />
-    <ClInclude Include="clsUpdateClientScreen.h" />
-    <ClInclude Include="clsUpdateCurrencyScreen.h" />
-    <ClInclude Include="clsUpdateUserScreen.h" />
-    <ClInclude Include="clsWithdrawScreen.h" />
-    <ClInclude Include="GlobalUser.h" />
+    <ClInclude Include="includes\clsAddNewClientScreen.h" />
+    <ClInclude Include="includes\clsAddNewUserScreen.h" />
+    <ClInclude Include="includes\clsBankClient.h" />
+    <ClInclude Include="includes\clsBankUser.h" />
+    <ClInclude Include="includes\clsClientListScreen.h" />
+    <ClInclude Include="includes\clsCurrency.h" />
+    <ClInclude Include="includes\clsCurrencyCalculator.h" />
+    <ClInclude Include="includes\clsCurrencyListScreen.h" />
+    <ClInclude Include="includes\clsCurrencyMainScreen.h" />
+    <ClInclude Include="includes\clsDeleteClientScreen.h" />
+    <ClInclude Include="includes\clsDeleteUserScreen.h" />
+    <ClInclude Include="includes\clsDepositScreen.h" />
+    <ClInclude Include="includes\clsFindClientScreen.h" />
+    <ClInclude Include="includes\clsFindCurrencyScreen.h" />
+    <ClInclude Include="includes\clsFindUserScreen.h" />
+    <ClInclude Include="includes\clsListUsersScreen.h" />
+    <ClInclude Include="includes\clsLoginScreen.h" />
+    <ClInclude Include="includes\clsMainScreen.h" />
+    <ClInclude Include="includes\clsManageUsersScreen.h" />
+    <ClInclude Include="includes\clsPerson.h" />
+    <ClInclude Include="includes\clsRegisterLoginScreen.h" />
+    <ClInclude Include="includes\clsScreen.h" />
+    <ClInclude Include="includes\clsShowBalancesScreen.h" />
+    <ClInclude Include="includes\clsTransactionScreen.h" />
+    <ClInclude Include="includes\clsTransferLogScreen.h" />
+    <ClInclude Include="includes\clsTransferScreen.h" />
+    <ClInclude Include="includes\clsUpdateClientScreen.h" />
+    <ClInclude Include="includes\clsUpdateCurrencyScreen.h" />
+    <ClInclude Include="includes\clsUpdateUserScreen.h" />
+    <ClInclude Include="includes\clsWithdrawScreen.h" />
+    <ClInclude Include="includes\GlobalUser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\bankSystem1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
