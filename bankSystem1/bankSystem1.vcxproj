@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\smart\Desktop\abu hadhoud 11\bankSystem1\util_libraryProject\classes_in_library\util_libraryProject;C:\Users\smart\Desktop\abu hadhoud 11\bankSystem1\string_library_project\string_library_project</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)includes</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,10 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\string_library_project\string_library_project\clsString.h" />
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsDate.h" />
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsInputValidate.h" />
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\util.h" />
     <ClInclude Include="includes\clsAddNewClientScreen.h" />
     <ClInclude Include="includes\clsAddNewUserScreen.h" />
     <ClInclude Include="includes\clsBankClient.h" />
@@ -141,12 +137,14 @@
     <ClInclude Include="includes\clsCurrencyCalculator.h" />
     <ClInclude Include="includes\clsCurrencyListScreen.h" />
     <ClInclude Include="includes\clsCurrencyMainScreen.h" />
+    <ClInclude Include="includes\clsDate.h" />
     <ClInclude Include="includes\clsDeleteClientScreen.h" />
     <ClInclude Include="includes\clsDeleteUserScreen.h" />
     <ClInclude Include="includes\clsDepositScreen.h" />
     <ClInclude Include="includes\clsFindClientScreen.h" />
     <ClInclude Include="includes\clsFindCurrencyScreen.h" />
     <ClInclude Include="includes\clsFindUserScreen.h" />
+    <ClInclude Include="includes\clsInputValidate.h" />
     <ClInclude Include="includes\clsListUsersScreen.h" />
     <ClInclude Include="includes\clsLoginScreen.h" />
     <ClInclude Include="includes\clsMainScreen.h" />
@@ -155,6 +153,7 @@
     <ClInclude Include="includes\clsRegisterLoginScreen.h" />
     <ClInclude Include="includes\clsScreen.h" />
     <ClInclude Include="includes\clsShowBalancesScreen.h" />
+    <ClInclude Include="includes\clsString.h" />
     <ClInclude Include="includes\clsTransactionScreen.h" />
     <ClInclude Include="includes\clsTransferLogScreen.h" />
     <ClInclude Include="includes\clsTransferScreen.h" />
@@ -163,6 +162,7 @@
     <ClInclude Include="includes\clsUpdateUserScreen.h" />
     <ClInclude Include="includes\clsWithdrawScreen.h" />
     <ClInclude Include="includes\GlobalUser.h" />
+    <ClInclude Include="includes\util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bankSystem1.cpp" />

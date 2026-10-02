@@ -30,21 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsDate.h">
-      <Filter>Header Files\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\clsInputValidate.h">
-      <Filter>Header Files\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\string_library_project\string_library_project\clsString.h">
-      <Filter>Header Files\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\util_libraryProject\classes_in_library\util_libraryProject\util.h">
-      <Filter>Header Files\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\clsAddNewClientScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="includes\clsAddNewUserScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -134,6 +119,21 @@
     </ClInclude>
     <ClInclude Include="includes\GlobalUser.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\clsAddNewClientScreen.h">
+      <Filter>Header Files\screens\users</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\clsDate.h">
+      <Filter>Header Files\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\clsInputValidate.h">
+      <Filter>Header Files\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\clsString.h">
+      <Filter>Header Files\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\util.h">
+      <Filter>Header Files\lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
